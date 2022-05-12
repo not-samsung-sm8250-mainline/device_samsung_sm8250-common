@@ -20,3 +20,4 @@ ro.netflix.bsp_rev=Q8250-19134-1
 debug.renderengine.backend=skiaglthreaded
 debug.hwui.renderer=skiagl
 renderthread.skia.reduceopstasksplitting=true 
+debug.hwui.skia_atrace_enabled=false
