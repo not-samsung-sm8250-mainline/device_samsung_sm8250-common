@@ -16,6 +16,8 @@ vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.line
 
 # Dalvik
 dalvik.vm.dex2oat64.enabled=true
+dalvik.vm.systemuicompilerfilter=speed 
+dalvik.vm.systemservercompilerfilter=speed 
 
 # Filesystem
 fs_mgr.overlayfs.prefer_cache_backing_storage=true
