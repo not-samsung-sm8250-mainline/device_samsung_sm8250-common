@@ -72,6 +72,14 @@ on init
     chown system system /sys/class/power_supply/battery/batt_slate_mode
     chown system radio /sys/class/power_supply/battery/charging_enabled
 
+on post-fs
+    # Start services for bootanim
+    start surfaceflinger
+    start bootanim
+    start vendor.hwcomposer-2-1
+    start vendor.configstore-hal
+    start vendor.qti.hardware.display.allocator
+
 on early-boot
     # Set RLIMIT_MEMLOCK to 64KB
     setrlimit 8 65536 65536
