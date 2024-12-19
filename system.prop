@@ -7,17 +7,11 @@ dalvik.vm.dex2oat64.enabled=true
 # Filesystem
 fs_mgr.overlayfs.prefer_cache_backing_storage=true
 
-# Battery
-ro.config.small_battery=true
-
 # Keystore
 ro.security.keystore.keytype=sakv2,gak,sgak
 
 # RIL
 ro.vendor.qti.va_aosp.support=1
-
-# Feature flags
-persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
 
 # Netflix
 ro.netflix.bsp_rev=Q8250-19134-1
@@ -30,3 +24,5 @@ debug.hwui.skia_atrace_enabled=false
 
 # Graphics
 debug.sf.disable_client_composition_cache=0
+debug.sf.latch_unsignaled=0
+debug.sf.auto_latch_unsignaled=true
