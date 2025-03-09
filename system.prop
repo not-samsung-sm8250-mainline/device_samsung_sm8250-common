@@ -21,3 +21,6 @@ debug.renderengine.backend=skiaglthreaded
 debug.hwui.renderer=skiagl
 renderthread.skia.reduceopstasksplitting=true 
 debug.hwui.skia_atrace_enabled=false
+
+# Graphics
+debug.sf.disable_client_composition_cache=0
