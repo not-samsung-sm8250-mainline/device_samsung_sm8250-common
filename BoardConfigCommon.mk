@@ -149,6 +149,11 @@ DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/network_manifest.xml
 endif
 DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 
+# ART
+WITH_DEXPREOPT := true
+DEX_PREOPT_DEFAULT := generate-vdex-and-image
+WITH_DEXPREOPT_DEBUG_INFO := false
+
 # Media
 TARGET_USES_ION := true
 
