@@ -7,6 +7,9 @@ dalvik.vm.dex2oat64.enabled=true
 # Filesystem
 fs_mgr.overlayfs.prefer_cache_backing_storage=true
 
+# Battery
+ro.config.small_battery=true
+
 # Keystore
 ro.security.keystore.keytype=sakv2,gak,sgak
 
