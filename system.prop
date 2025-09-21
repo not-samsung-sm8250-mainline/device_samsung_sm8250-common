@@ -18,6 +18,11 @@ vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.line
 dalvik.vm.dex2oat64.enabled=true
 dalvik.vm.systemuicompilerfilter=speed 
 dalvik.vm.systemservercompilerfilter=speed 
+dalvik.vm.usap_pool_enabled=true 
+dalvik.vm.usap_refill_threshold=1
+dalvik.vm.usap_pool_size_max=10 
+dalvik.vm.usap_pool_size_min=1 
+dalvik.vm.usap_pool_refill_delay_ms=3000
 
 # Filesystem
 fs_mgr.overlayfs.prefer_cache_backing_storage=true
