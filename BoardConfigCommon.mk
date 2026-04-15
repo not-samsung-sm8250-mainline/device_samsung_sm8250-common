@@ -102,7 +102,6 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
 
 BOARD_USES_METADATA_PARTITION        := true
 TARGET_USERIMAGES_USE_F2FS           := true
-TARGET_USERIMAGES_USE_EXT4           := true
 
 # Partitions
 -include vendor/lineage/config/BoardConfigReservedSize.mk
