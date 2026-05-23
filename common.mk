@@ -190,12 +190,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint-service.samsung
 
-# FlipFlap
-ifneq ($(TARGET_IS_TABLET),true)
-PRODUCT_PACKAGES += \
-    FlipFlap
-endif
-
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service-mdfpp
