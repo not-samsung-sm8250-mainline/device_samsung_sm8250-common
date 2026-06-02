@@ -153,14 +153,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "TASchedtuneBoost",
-      "Path": "/dev/stune/top-app/schedtune.boost",
-      "Values": [
-        "10"
-      ],
-      "ResetOnInit": true
-    },
-    {
         "Name": "TouchscreenEnable",
         "Path": "/sys/class/sec/tsp/input/enabled",
         "Values": [
