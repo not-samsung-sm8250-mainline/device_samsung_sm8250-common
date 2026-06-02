@@ -38,8 +38,8 @@ renderthread.skia.reduceopstasksplitting=true
 debug.hwui.skia_atrace_enabled=false
 
 # Graphics
-debug.sf.disable_client_composition_cache=0
-debug.sf.latch_unsignaled=0
-debug.sf.auto_latch_unsignaled=true
+debug.sf.disable_client_composition_cache=1
+debug.sf.latch_unsignaled=1
+debug.sf.auto_latch_unsignaled=false
 debug.hwui.skia_tracing_enabled=false
 debug.hwui.skia_use_perfetto_track_events=false
