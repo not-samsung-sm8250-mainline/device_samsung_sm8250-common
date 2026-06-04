@@ -234,15 +234,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "PMQoSCpuDmaLatency",
-      "Path": "/dev/cpu_dma_latency",
-      "Values": [
-        "61",
-        "100"
-      ],
-      "HoldFd": true
-    },
-    {
       "Name": "PowerHALMainState",
       "Path": "vendor.powerhal.state",
       "Values": [
@@ -417,12 +408,6 @@
       "Node": "DoubleTapToWakeEnable",
       "Duration": 0,
       "Value": "aot_enable,1"
-    },
-    {
-      "PowerHint": "ML_ACC",
-      "Node": "PMQoSCpuDmaLatency",
-      "Duration": 2000,
-      "Value": "61"
     },
     {
       "PowerHint": "FIXED_PERFORMANCE",
