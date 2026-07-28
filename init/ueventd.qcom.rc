@@ -567,6 +567,3 @@ firmware_directories /vendor/firmware_mnt/image/ /vendor/firmware-modem/image/
 #
 # ] Permissions for Vibrator
 #
-
-# Ntsync
-/dev/ntsync                   0666   system     system

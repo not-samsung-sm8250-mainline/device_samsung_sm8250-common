@@ -27,6 +27,3 @@ type tz_device, dev_type;
 
 # UART device
 type ttyhs_device, dev_type;
-
-# Ntsync
-type ntsync_device, dev_type;
