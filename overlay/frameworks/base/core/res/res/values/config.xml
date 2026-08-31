@@ -159,7 +159,6 @@
         <item>"/apex/com.android.art/javalib/core-libart.jar"</item>
         <item>"/system_ext/priv-app/SystemUI/SystemUI.apk"</item>
         <item>"/system_ext/priv-app/SystemUI/oat/arm64/SystemUI.odex"</item>
-        <item>"/system/bin/surfaceflinger"</item>
         <item>"/system/framework/arm64/boot-framework.oat"</item>
         <item>"/system/framework/oat/arm64/services.odex"</item>
         <item>"/system/bin/surfaceflinger"</item>
@@ -176,6 +175,7 @@
         <item>"/vendor/lib64/libllvm-glnext.so"</item>
         <item>"/vendor/lib64/libllvm-qcom.so"</item>
         <item>"/vendor/lib64/libllvm-qgl.so"</item>
+        <item>"/vendor/lib64/libsdmextension.so"</item>
     </string-array>
 
     <!-- True if camera app should be pinned via Pinner Service -->
