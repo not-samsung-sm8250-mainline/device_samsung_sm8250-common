@@ -272,4 +272,7 @@
     <!-- The minimum number of visible recent tasks to be presented to the user through the
          SystemUI. Can be -1 if there is no minimum limit. -->
     <integer name="config_minNumVisibleRecentTasks">30</integer>
+
+   <!-- Flag indicating whether we should enable smart battery. -->
+    <bool name="config_smart_battery_available">true</bool>
 </resources>
