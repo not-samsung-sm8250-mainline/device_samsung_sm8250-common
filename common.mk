@@ -55,6 +55,11 @@ USE_DEX2OAT_DEBUG := false
 # Reduce system server verbosity
 PRODUCT_SYSTEM_SERVER_DEBUG_INFO := false
 
+# Enable whole-program R8 Java optimizations for SystemUI and system_server,
+# but also allow explicit overriding for testing and development.
+SYSTEM_OPTIMIZE_JAVA ?= true
+SYSTEMUI_OPTIMIZE_JAVA ?= true
+
 # Partitions
 PRODUCT_PACKAGES += \
     vendor_dsp_mountpoint \
