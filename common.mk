@@ -187,7 +187,8 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # A list of dpis to select prebuilt apk, in precedence order.
 PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
 
-# Display
+# Display (skipped with TARGET_USES_MAINLINE_GRAPHICS, Mesa provides it)
+ifeq ($(TARGET_USES_MAINLINE_GRAPHICS),)
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
@@ -195,7 +196,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.composer-service \
     vendor.qti.hardware.memtrack-service
-
+endif
 ifneq ($(TARGET_IS_TABLET),true)
 PRODUCT_PACKAGES += \
     AdvancedDisplay
