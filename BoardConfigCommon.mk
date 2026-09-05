@@ -52,16 +52,17 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
-# Kernel
-BOARD_KERNEL_IMAGE_NAME        := Image
+# Kernel (mainline tree, branch r8q/7.2.0-not)
+BOARD_KERNEL_IMAGE_NAME        := Image.gz
 BOARD_BOOT_HEADER_VERSION      := 2
-BOARD_KERNEL_SEPARATED_DTBO    := true
+BOARD_KERNEL_SEPARATED_DTBO    := false
 BOARD_INCLUDE_DTB_IN_BOOTIMG   := true
 
 BOARD_KERNEL_CMDLINE := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3 \
+    clk_ignore_unused \
     console=null \
     firmware_class.path=/vendor/firmware_mnt/image \
     loop.max_part=7 \
@@ -76,10 +77,10 @@ BOARD_KERNEL_PAGESIZE      := 4096
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 TARGET_KERNEL_CLANG_VERSION := r563880c
-TARGET_KERNEL_SOURCE := kernel/samsung/sm8250
+TARGET_KERNEL_SOURCE := kernel/samsung/sm8250-mainline
 TARGET_KERNEL_CONFIG := \
-    vendor/kona-perf_defconfig \
-    vendor/samsung/kona-sec-common.config
+    defconfig \
+    r8q.config
 
 # Additional root folders
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
@@ -170,7 +171,7 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true
-BOARD_INCLUDE_RECOVERY_DTBO := true
+BOARD_INCLUDE_RECOVERY_DTBO := false
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/init/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
