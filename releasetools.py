@@ -50,5 +50,6 @@ def AddImage(info, basename, dest):
   info.script.AppendExtra('package_extract_file("%s", "%s");' % (basename, dest))
 
 def OTA_InstallEnd(info):
-  AddImage(info, "dtbo.img", "/dev/block/by-name/dtbo")
+  if "IMAGES/dtbo.img" in info.input_zip.namelist():
+    AddImage(info, "dtbo.img", "/dev/block/by-name/dtbo")
   return
