@@ -85,6 +85,12 @@ TARGET_KERNEL_CONFIG := \
 
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load))
 
+# Mainline graphics
+BOARD_MESA3D_USES_MESON_BUILD := true
+BOARD_MESA3D_GALLIUM_DRIVERS += freedreno
+BOARD_MESA3D_VULKAN_DRIVERS += freedreno
+BOARD_VENDOR_SEPOLICY_DIRS += external/minigbm-upstream/cros_gralloc/sepolicy
+
 # Additional root folders
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
