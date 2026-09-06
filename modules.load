@@ -13,7 +13,6 @@ qrtr.ko
 qrtr-mhi.ko
 ath11k.ko
 ath11k_pci.ko
-qcom_glink_smem.ko
 rpmsg_char.ko
 qrtr-smd.ko
 qcom_q6v5_pas.ko
@@ -25,4 +24,3 @@ ak7375.ko
 ccs.ko
 s5k3m5.ko
 r8q-camprobe.ko
-
