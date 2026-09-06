@@ -19,3 +19,6 @@ vendor.samsung.hardware.radio.sim.ISehRadioSim/slot2                u:object_r:h
 
 # S pen
 vendor.samsung.hardware.spen.ISPen/default                          u:object_r:hal_samsung_spen_service:s0
+
+mapper/minigbm                                                        u:object_r:hal_graphics_mapper_service:s0
+mapper/minigbm_upstream                                                u:object_r:hal_graphics_mapper_service:s0

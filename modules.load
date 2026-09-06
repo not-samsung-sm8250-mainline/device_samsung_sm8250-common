@@ -1,3 +1,4 @@
+msm.ko
 gpi.ko
 i2c-qcom-geni.ko
 fts5cu56a.ko
@@ -5,22 +6,3 @@ zinitix.ko
 max77705.ko
 max77705_charger.ko
 max17042_battery.ko
-msm.ko
-phy-qcom-qmp-pcie.ko
-mhi.ko
-mhi_pci_generic.ko
-qrtr.ko
-qrtr-mhi.ko
-ath11k.ko
-ath11k_pci.ko
-rpmsg_char.ko
-qrtr-smd.ko
-qcom_q6v5_pas.ko
-camcc-sm8250.ko
-i2c-qcom-cci.ko
-qcom-camss.ko
-hi847.ko
-ak7375.ko
-ccs.ko
-s5k3m5.ko
-r8q-camprobe.ko

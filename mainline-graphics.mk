@@ -19,11 +19,18 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # AIDL allocator/mapper backed by minigbm.
 TARGET_GRAPHICS_ALLOCATOR_HAL := minigbm-upstream
-TARGET_MINIGBM_PLATFORM := msm
+TARGET_MINIGBM_PLATFORM := gbm_mesa
 $(call soong_config_set,minigbm_upstream,platform,$(TARGET_MINIGBM_PLATFORM))
+$(call soong_config_set_bool,minigbm_upstream,enable_gbm_mesa_driver,true)
 PRODUCT_PACKAGES += \
+    dri_gbm \
+    libgbm_mesa \
     android.hardware.graphics.allocator-service.minigbm_upstream \
     mapper.minigbm_upstream
+ifeq ($(TARGET_MAINLINE_SIMPLEDRM_BOOTSTRAP),true)
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.minigbm.avoid_ubwc=true
+endif
 
 # AIDL composer backed by drm_hwcomposer.
 TARGET_GRAPHICS_COMPOSER_HAL := drm_hwcomposer

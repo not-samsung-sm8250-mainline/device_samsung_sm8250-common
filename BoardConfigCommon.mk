@@ -57,7 +57,6 @@ BOARD_KERNEL_IMAGE_NAME        := Image.gz
 BOARD_BOOT_HEADER_VERSION      := 2
 BOARD_KERNEL_SEPARATED_DTBO    := false
 BOARD_INCLUDE_DTB_IN_BOOTIMG   := true
-TARGET_DTB_LIST_WILDCARD       := qcom/sm8250-samsung-r8q
 
 BOARD_KERNEL_CMDLINE := \
     androidboot.hardware=qcom \
@@ -70,6 +69,7 @@ BOARD_KERNEL_CMDLINE := \
     firmware_class.path=/vendor/firmware_mnt/image \
     loop.max_part=7 \
     lpm_levels.sleep_disabled=1 \
+    msm.separate_gpu_kms=1 \
     msm_rtb.filter=0x237 \
     printk.devkmsg=on \
     service_locator.enable=1 \
@@ -88,10 +88,13 @@ TARGET_KERNEL_CONFIG := \
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load))
 
 # Mainline graphics
+ifeq ($(TARGET_USES_MAINLINE_GRAPHICS),true)
 BOARD_MESA3D_USES_MESON_BUILD := true
 BOARD_MESA3D_GALLIUM_DRIVERS += freedreno
 BOARD_MESA3D_VULKAN_DRIVERS += freedreno
+BOARD_MESA3D_BUILD_LIBGBM := true
 BOARD_VENDOR_SEPOLICY_DIRS += external/minigbm-upstream/cros_gralloc/sepolicy
+endif
 
 # Additional root folders
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs

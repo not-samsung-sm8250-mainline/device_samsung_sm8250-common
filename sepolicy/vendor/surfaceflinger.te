@@ -1,2 +1,3 @@
 # Surfaceflinger has nothing with the /spu
 dontaudit surfaceflinger spu_file:dir search;
+get_prop(surfaceflinger, vendor_minigbm_prop)

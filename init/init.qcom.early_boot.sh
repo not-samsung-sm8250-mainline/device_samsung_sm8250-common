@@ -50,14 +50,17 @@ else
     soc_hwver=`cat /sys/devices/system/soc/soc0/platform_version` 2> /dev/null
 fi
 
-if [ -f /sys/class/drm/card0-DSI-1/modes ]; then
-    echo "detect" > /sys/class/drm/card0-DSI-1/status
-    mode_file=/sys/class/drm/card0-DSI-1/modes
-    while read line; do
-        fb_width=${line%%x*};
-        break;
-    done < $mode_file
-elif [ -f /sys/class/graphics/fb0/virtual_size ]; then
+for mode_file in /sys/class/drm/card*-*/modes; do
+    if [ -f "$mode_file" ]; then
+        while read line; do
+            fb_width=${line%%x*};
+            break;
+        done < "$mode_file"
+        break
+    fi
+done
+
+if [ -z "$fb_width" ] && [ -f /sys/class/graphics/fb0/virtual_size ]; then
     res=`cat /sys/class/graphics/fb0/virtual_size` 2> /dev/null
     fb_width=${res%,*}
 fi
