@@ -75,7 +75,7 @@ else
     log -t DRM_BOOT -p w "file: '$vbfile' or perms doesn't exist"
 fi
 
-function set_density_by_fb() {
+set_density_by_fb() {
     #put default density based on width
     if [ -z $fb_width ]; then
         setprop vendor.display.lcd_density 320
@@ -149,7 +149,7 @@ case "$target" in
         # lcd density is write-once. Hence the separate switch case
         case "$soc_hwplatform" in
             "Liquid")
-                if [ "$soc_hwver" == "196608" ]; then # version 0x30000 is 3D sku
+                if [ "$soc_hwver" = "196608" ]; then # version 0x30000 is 3D sku
                     setprop ro.sf.hwrotation 90
                 fi
 
@@ -517,7 +517,7 @@ esac
 # Loop through the sysfs nodes and determine
 # the HDMI(dtv panel)
 
-function set_perms() {
+set_perms() {
     #Usage set_perms <filename> <ownership> <permission>
     chown -h $2 $1
     chmod $3 $1

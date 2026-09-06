@@ -30,8 +30,6 @@
 #
 
 on early-boot
-    write /sys/kernel/boot_slpi/boot 1
-
     chown system system /mnt/vendor/persist/sensors
     chown system system /mnt/vendor/persist/sensors/sns.reg
     chown system system /mnt/vendor/persist/sensors/sensors_list.txt
@@ -43,8 +41,6 @@ on early-boot
     chown system system /mnt/vendor/persist/sensors/registry/sns_reg_version
     chown system system /mnt/vendor/persist/sensors/registry/config
     chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
-    chown system system /sys/kernel/boot_adsp/ssr
-
 on post-fs-data
     # sensors log dir
     mkdir /data/vendor/sensors 0777 system system

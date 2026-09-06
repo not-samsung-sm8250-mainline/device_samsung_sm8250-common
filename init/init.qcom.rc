@@ -77,11 +77,6 @@ on post-fs
 on early-boot
     # Set RLIMIT_MEMLOCK to 64KB
     setrlimit 8 65536 65536
-# Allow subsystem (modem etc) debugging
-    write /sys/kernel/boot_adsp/boot 1
-    write /sys/kernel/boot_cdsp/boot 1
-    write /sys/devices/virtual/npu/msm_npu/boot 1
-    write /sys/devices/virtual/cvp/cvp/boot 1
     exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.qcom.early_boot.sh
     exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.qti.can.sh
     setprop ro.sf.lcd_density ${vendor.display.lcd_density}
@@ -110,7 +105,6 @@ on boot
     #chown bluetooth bluetooth /sys/module/hci_smd/parameters/hcismd_set
     chown system system /sys/module/msm_core/parameters/polling_interval
     chown system system /sys/module/msm_core/parameters/disabled
-    chown system system /sys/kernel/boot_slpi/ssr
     chown system system /sys/module/radio_iris_transport/parameters/fmsmd_set
     #chmod 0660 /sys/module/bluetooth_power/parameters/power
     #chmod 0660 /sys/module/hci_smd/parameters/hcismd_set
@@ -466,11 +460,6 @@ on property:vendor.media.target_variant=*
     setprop ro.media.xml_variant.codecs ${vendor.media.target_variant}
     setprop ro.media.xml_variant.codecs_performance ${vendor.media.target_variant}
 
-service qcom-c_core-sh  /vendor/bin/init.qcom.class_core.sh
-    class core
-    user root
-    oneshot
-
 service qcom-c_main-sh /vendor/bin/init.class_main.sh
     class main
     user root
@@ -573,13 +562,6 @@ service qcom-sh /vendor/bin/init.qcom.sh
 #     user root
 #     oneshot
 
-service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
-    class late_start
-    user root
-    group root system wakelock graphics
-    disabled
-    oneshot
-
 # service wifi-sdio-on /vendor/bin/init.qcom.sdio.sh
 #     class late_start
 #     group wifi inet
@@ -591,9 +573,6 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
 #     user root
 #     disabled
 #     oneshot
-
-on property:sys.boot_completed=1
-    start qcom-post-boot
 
 on property:ro.vendor.ril.mbn_copy_completed=1
     write /data/vendor/radio/copy_complete 1
@@ -718,10 +697,6 @@ service esepmdaemon /system/vendor/bin/esepmdaemon
     class core
     user system
     group nfc
-
-on charger
-    # setprop persist.sys.usb.config mass_storage
-    start qcom-post-boot
 
 # Add poweroffhandler
 service poweroffhandler /system/vendor/bin/poweroffhandler

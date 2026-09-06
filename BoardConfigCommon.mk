@@ -66,7 +66,7 @@ BOARD_KERNEL_CMDLINE := \
     androidboot.usbcontroller=a600000.dwc3 \
     clk_ignore_unused \
     console=null \
-    firmware_class.path=/vendor/firmware_mnt/image \
+    firmware_class.path=/vendor/firmware \
     loop.max_part=7 \
     lpm_levels.sleep_disabled=1 \
     msm.separate_gpu_kms=1 \
