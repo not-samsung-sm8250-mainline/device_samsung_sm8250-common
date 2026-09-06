@@ -356,7 +356,7 @@ firmware_directories /vendor/firmware_mnt/image/ /vendor/firmware-modem/image/
 /dev/block/platform/soc/624000.ufshc/by-name/frp          0600   system  system
 /dev/block/platform/soc/1da4000.ufshc/by-name/frp         0600   system  system
 /dev/block/platform/soc/c0c4000.sdhci/by-name/frp         0600   system  system
-/dev/block/platform/soc/1d84000.ufshc/by-name/frp         0600   system  system
+/dev/block/platform/soc@0/1d84000.ufshc/by-name/frp         0600   system  system
 /dev/block/platform/soc/7c4000.sdhci/by-name/frp          0600   system  system
 /dev/block/platform/soc/4744000.sdhci/by-name/frp         0600   system  system
 /dev/block/platform/soc/4804000.ufshc/by-name/frp         0600   system  system
@@ -365,13 +365,13 @@ firmware_directories /vendor/firmware_mnt/image/ /vendor/firmware-modem/image/
 /dev/block/platform/soc/8804000.sdhci/by-name/frp         0600   system  system
 
 # Reactivation Lock
-/dev/block/platform/soc/1d84000.ufshc/by-name/steady      0660   system  system
+/dev/block/platform/soc@0/1d84000.ufshc/by-name/steady      0660   system  system
 
 # Google FRP solution
-/dev/block/platform/soc/1d84000.ufshc/by-name/persistent  0660   system  system
+/dev/block/platform/soc@0/1d84000.ufshc/by-name/persistent  0660   system  system
 
 # Param permission
-/dev/block/platform/soc/1d84000.ufshc/by-name/param       0660   root    system
+/dev/block/platform/soc@0/1d84000.ufshc/by-name/param       0660   root    system
 
 # Kmsg device
 /dev/kmsg                 0620   root       system
