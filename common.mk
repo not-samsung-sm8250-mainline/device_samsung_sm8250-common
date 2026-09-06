@@ -62,6 +62,7 @@ SYSTEMUI_OPTIMIZE_JAVA ?= true
 
 # Partitions
 PRODUCT_PACKAGES += \
+    dlkm_loader_mainline \
     vendor_dsp_mountpoint \
     vendor_firmware_mnt_mountpoint \
     vendor_firmware-modem_mountpoint
@@ -418,6 +419,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel/pixelstats \
     hardware/google/pixel/power-libperfmgr \
+    hardware/mainline/common \
     hardware/qcom-caf/common/libqti-perfd-client \
     hardware/samsung \
     vendor/qcom/opensource/usb/etc
