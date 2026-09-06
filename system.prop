@@ -1,11 +1,3 @@
-# Debug bringup
-persist.service.adb.enable=1
-persist.service.debuggable=1
-persist.sys.usb.config=adb
-persist.logd.logpersistd=logcatd
-persist.logd.size=16M
-ro.logd.size=16M
-
 # Audio
 af.resampler.quality=7 
 ro.audio.usb.period_us=20375 

@@ -29,3 +29,7 @@ vendor.sys.qseecomd.                             u:object_r:vendor_qseecomd_prop
 ro.vendor.wifi.                                  u:object_r:vendor_wifi_prop:s0
 vendor.wifi.                                     u:object_r:vendor_wifi_prop:s0
 vendor.qcom.wifi.                                u:object_r:vendor_wifi_prop:s0
+
+# Mainline graphics (drm_hwcomposer/minigbm)
+vendor.hwc.drm.device                            u:object_r:vendor_hwc_drm_prop:s0 exact string
+vendor.minigbm.                                  u:object_r:vendor_minigbm_prop:s0

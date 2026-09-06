@@ -9,3 +9,7 @@ vendor_internal_prop(vendor_sehal_prop)
 
 # Tee
 vendor_internal_prop(vendor_qseecomd_prop)
+
+# Mainline graphics (Mesa/minigbm/drm_hwcomposer)
+vendor_public_prop(vendor_minigbm_prop)
+vendor_public_prop(vendor_hwc_drm_prop)
