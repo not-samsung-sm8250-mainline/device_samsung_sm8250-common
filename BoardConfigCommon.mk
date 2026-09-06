@@ -57,6 +57,7 @@ BOARD_KERNEL_IMAGE_NAME        := Image.gz
 BOARD_BOOT_HEADER_VERSION      := 2
 BOARD_KERNEL_SEPARATED_DTBO    := false
 BOARD_INCLUDE_DTB_IN_BOOTIMG   := true
+TARGET_DTB_LIST_WILDCARD       := qcom/sm8250-samsung-r8q
 
 BOARD_KERNEL_CMDLINE := \
     androidboot.hardware=qcom \
