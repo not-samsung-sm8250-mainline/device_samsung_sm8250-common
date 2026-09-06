@@ -61,6 +61,7 @@ TARGET_DTB_LIST_WILDCARD       := qcom/sm8250-samsung-r8q
 
 BOARD_KERNEL_CMDLINE := \
     androidboot.hardware=qcom \
+    androidboot.bootdevice=1d84000.ufshc \
     androidboot.boot_devices=soc@0/1d84000.ufshc \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3 \
