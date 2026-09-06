@@ -1,6 +1,5 @@
 version 1
 flash boot
-flash dtbo
 flash recovery
 flash --apply-vbmeta vbmeta_samsung vbmeta.img
 reboot fastboot
