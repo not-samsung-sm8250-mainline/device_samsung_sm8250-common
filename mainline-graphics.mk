@@ -32,3 +32,8 @@ TARGET_DRM_HWCOMPOSER_HAL_INTERFACE := aidl
 TARGET_DRM_HWCOMPOSER_INSIDE_APEX := false
 PRODUCT_PACKAGES += \
     android.hardware.composer.hwc3-service.drm_upstream
+
+# AIDL memtrack replacement for the downstream QTI service.
+TARGET_MEMTRACK_HAL := default-aidl
+PRODUCT_PACKAGES += \
+    com.android.hardware.memtrack
