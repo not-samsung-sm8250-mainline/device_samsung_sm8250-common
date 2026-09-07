@@ -93,7 +93,9 @@ BOARD_MESA3D_USES_MESON_BUILD := true
 BOARD_MESA3D_GALLIUM_DRIVERS += freedreno
 BOARD_MESA3D_VULKAN_DRIVERS += freedreno
 BOARD_MESA3D_BUILD_LIBGBM := true
-BOARD_VENDOR_SEPOLICY_DIRS += external/minigbm-upstream/cros_gralloc/sepolicy
+BOARD_VENDOR_SEPOLICY_DIRS += \
+    external/minigbm-upstream/cros_gralloc/sepolicy \
+    device/mainline/common/sepolicy/vendor/minigbm
 endif
 
 # Additional root folders
