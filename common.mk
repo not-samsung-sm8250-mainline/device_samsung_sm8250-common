@@ -340,8 +340,13 @@ PRODUCT_PACKAGES += \
     libqti-perfd-client \
     libperfmgr
 
+ifeq ($(TARGET_USES_MAINLINE_GRAPHICS),true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/power/powerhint-mainline.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+else
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+endif
 
 # PowerShare
 ifneq ($(TARGET_IS_TABLET),true)
