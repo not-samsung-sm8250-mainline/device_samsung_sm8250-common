@@ -87,6 +87,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.samsung.display-import.rc",
+    src: "init.samsung.display-import.rc",
+    sub_dir: "init/hw",
+    soc_specific: true,
+}
+
+prebuilt_etc {
     name: "init.samsung.eif.rc",
     src: "init.samsung.eif.rc",
     sub_dir: "init/hw",

@@ -87,7 +87,6 @@ PRODUCT_PACKAGES += \
     init.samsung.battery.rc \
     init.samsung.bsp.rc \
     init.samsung.camera.rc \
-    init.samsung.display.rc \
     init.samsung.eif.rc \
     init.samsung.rc \
     init.target.rc \
@@ -96,6 +95,12 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc \
     wifi_qcom.rc \
     wifi_sec.rc
+
+ifneq ($(TARGET_USES_MAINLINE_GRAPHICS),true)
+PRODUCT_PACKAGES += \
+    init.samsung.display.rc \
+    init.samsung.display-import.rc
+endif
 
 ifneq ($(TARGET_IS_WIFI-ONLY),true)
 PRODUCT_PACKAGES += \
