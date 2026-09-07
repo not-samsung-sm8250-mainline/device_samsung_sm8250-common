@@ -18,8 +18,14 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.hardware.vulkan=freedreno
 
 # AIDL allocator/mapper backed by minigbm.
+# NOTE: the platform must be the msm hardware backend, not gbm_mesa.
+# vendor.minigbm.avoid_ubwc is consumed only by the msm backend (msm.c);
+# "gbm_mesa" is not a valid platform key in minigbm-upstream's Android.bp
+# select map, so it would compile out DRV_MSM/backend_msm and leave the
+# property controlling nothing. The gbm_mesa driver below stays enabled as
+# the fallback backend for the simpledrm scanout node.
 TARGET_GRAPHICS_ALLOCATOR_HAL := minigbm-upstream
-TARGET_MINIGBM_PLATFORM := gbm_mesa
+TARGET_MINIGBM_PLATFORM := msm
 $(call soong_config_set,minigbm_upstream,platform,$(TARGET_MINIGBM_PLATFORM))
 $(call soong_config_set_bool,minigbm_upstream,enable_gbm_mesa_driver,true)
 PRODUCT_PACKAGES += \
